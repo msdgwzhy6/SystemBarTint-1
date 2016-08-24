@@ -1,6 +1,5 @@
 package com.ztiany.systembar;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,14 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import com.ztiany.systembar.compat.ResourceUtil;
-import com.ztiany.systembar.compat.SystemBarCompat;
-import com.ztiany.systembar.trans.CodeColorStatusActivity;
-import com.ztiany.systembar.trans.CodeOtherActivity;
-import com.ztiany.systembar.trans.SwipeBackTestActivity;
-import com.ztiany.systembar.trans.ThemeColorStatusActivity;
-import com.ztiany.systembar.trans.ThemeOtherActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -59,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setStatusBar() {
-        SystemBarCompat.setTranslucentStatusForKitkat(this);
-        SystemBarCompat.setStatusBarColorForKitkat(this, ResourceUtil.getColor(R.color.colorPrimary, this));
+
     }
 
     @Override
@@ -130,27 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void codeColor(View view) {
-        startActivity(new Intent(this, CodeColorStatusActivity.class));
-    }
 
-    public void codeOther(View view) {
-        startActivity(new Intent(this, CodeOtherActivity.class));
-
-    }
-
-    public void themeColor(View view) {
-        startActivity(new Intent(this, ThemeColorStatusActivity.class));
-
-    }
-
-    public void themeOther(View view) {
-        startActivity(new Intent(this, ThemeOtherActivity.class));
-    }
-
-    public void swipeBack(View view) {
-        startActivity(new Intent(this, SwipeBackTestActivity.class));
-    }
 
 
 }
