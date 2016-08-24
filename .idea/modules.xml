@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Library/Library.iml" filepath="$PROJECT_DIR$/Library/Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/Library.iml" filepath="$PROJECT_DIR$/Library/Library.iml" />
       <module fileurl="file://$PROJECT_DIR$/Swipebacklayout/Swipebacklayout.iml" filepath="$PROJECT_DIR$/Swipebacklayout/Swipebacklayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemBarTint.iml" filepath="$PROJECT_DIR$/SystemBarTint.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

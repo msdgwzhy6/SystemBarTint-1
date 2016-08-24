@@ -9,5 +9,6 @@
 
     <string name="list">列表</string>
     <string name="overview">总览</string>
+    <string name="title_activity_drawable_tab">DrawableTabActivity</string>
 
 </resources>

@@ -2,7 +2,7 @@ package com.ztiany.systembar;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,7 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
+
+import com.ztiany.library.SystemBarCompat;
+import com.ztiany.systembar.coordinator.CoordinatorActivity;
+import com.ztiany.systembar.drawer_layout.DrawerLayoutTabActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,12 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.act_main_drawer)
     DrawerLayout mDrawerLayout;
-    @Bind(R.id.act_main_sfl)
-    FrameLayout mFrameLayout;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.act_main_drawer_nav)
-    protected NavigationView mNavigationView;
 
 
     private ActionBarDrawerToggle mActionBarDrawerToggle;
@@ -50,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setStatusBar() {
-
+        //status bar color
+        int color = ContextCompat.getColor(this, R.color.colorPrimaryDark);
+        //status bar for api 19
+        SystemBarCompat.setTranslucentStatusOnKitkat(this);
+        SystemBarCompat.setStatusBarColorOnKitkat(this, color);
     }
 
     @Override
@@ -88,19 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initNavigation() {
-        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                closeDrawer();
-                return true;
-            }
-        });
-    }
 
-    private void closeDrawer() {
-        if (mDrawerLayout != null) {
-            mDrawerLayout.closeDrawers();
-        }
     }
 
 
@@ -120,7 +111,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void drawerLayoutWidthTab(View view) {
+        startActivity(DrawerLayoutTabActivity.getLaunchIntent(this));
+    }
 
-
+    public void coordinatorWithTab(View view) {
+        startActivity(CoordinatorActivity.getLaunchIntent(this));
+    }
 
 }
